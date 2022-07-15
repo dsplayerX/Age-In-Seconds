@@ -72,19 +72,19 @@ fn main() {
 
     // time passed since birth in seconds
     let time_passed: i64 = current_time.timestamp() - birthday.timestamp();
-
+    //println!("{}", current_time);
     println!("\nAge In Seconds: {} seconds", time_passed);
 
-    let time_in_minutes = time_passed / 60;
-    let time_in_hours = time_in_minutes / 60;
-    let time_in_days = time_in_hours / 24;
+    let time_in_minutes = (time_passed as f64) / 60.0;
+    let time_in_hours = (time_in_minutes as f64) / 60.0;
+    let time_in_days = (time_in_hours as f64) / 24.0;
     let time_in_years = (time_in_days as f64) / 365.25;
     
     println!("\nMore...");
-    println!("Age In Minutes: {} minutes", time_in_minutes);
-    println!("\nAge In Hours: {} hours", time_in_hours);
-    println!("\nAge In Days: {} days", time_in_days);
-    println!("\nAge In Years: {} years", time_in_years);
+    println!("Age In Minutes: {:.2} minutes", time_in_minutes);
+    println!("\nAge In Hours: {:.2} hours", time_in_hours);
+    println!("\nAge In Days: {:.2} days", time_in_days);
+    println!("\nAge In Years: {:.2} years", time_in_years);
 
     println!("\n> Press any key to exit...");
     let mut input_exit = String::new();
